@@ -1,0 +1,9 @@
+﻿{
+	"setting": "some setting value",
+	"number": "5",
+	"upper": {
+		"nested": {
+			"innerValue" :  "some inner value"
+		}
+	} 
+}
