@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNet.Mvc;
+using TagHelpersMvc.Models;
 
 namespace TagHelpersMvc.Controllers
 {
@@ -11,8 +12,13 @@ namespace TagHelpersMvc.Controllers
         {
             return View();
         }
+		[HttpPost]
+		public IActionResult Index([Bind("Name", "DateOfBirth", "PhoneNumber")] Contact model)
+		{
+			return View();
+		}
 
-        public IActionResult About()
+		public IActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
