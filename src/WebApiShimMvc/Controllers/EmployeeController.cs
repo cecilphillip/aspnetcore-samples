@@ -13,7 +13,6 @@ namespace WebApiShimMvc.Controllers
         [HttpGet]
         public HttpResponseMessage Retrieve(string id)
         {
-
             var response = Request.CreateResponse(HttpStatusCode.OK, new Employee
             {
                 Id = id,

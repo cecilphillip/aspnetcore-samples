@@ -16,9 +16,12 @@ namespace TagHelpersMvc
         }
        
         public void Configure(IApplicationBuilder app)
-        {                    
+        {   
+            app.UseErrorHandler("/Home/Error");
+
             // Add static files to the request pipeline.
             app.UseStaticFiles();
+
                     
             app.UseMvc(routes =>
             {
