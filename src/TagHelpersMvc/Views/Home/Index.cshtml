@@ -1,8 +1,10 @@
-﻿@{
-	ViewBag.Title = "Contact Page";
+﻿@using TagHelpersMvc.Models
+
+@model Contact
+
+@{
+    ViewBag.Title = "Contact Page";
 }
-@model TagHelpersMvc.Models.Contact
-@addtaghelper "Microsoft.AspNet.Mvc.TagHelpers" 
 
 <h2>@ViewBag.Title.</h2>
 
@@ -44,8 +46,6 @@
 		</form>
 	</div>
 </div>
-
-<custom custom-model="PhoneNumber" >Hello</custom>
 
 @section Scripts {
 	<script src="~/lib/jquery-validation/jquery.validate.js"></script>
