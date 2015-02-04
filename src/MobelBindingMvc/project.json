@@ -1,16 +1,10 @@
-﻿{    
+﻿{
     "webroot": "wwwroot",
     "version": "1.0.0-*",
     "dependencies": {
         "Microsoft.AspNet.Mvc": "6.0.0-beta2",
         "Microsoft.AspNet.Diagnostics": "1.0.0-beta2",
-        "Microsoft.AspNet.Server.IIS": "1.0.0-beta2",        
-        "Microsoft.AspNet.StaticFiles": "1.0.0-beta2",
-        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta2",        
-        "Microsoft.Framework.Logging": "1.0.0-beta2",
-        "Microsoft.Framework.Logging.Console": "1.0.0-beta2"        
-    },
-    "commands": {              
+        "Microsoft.AspNet.Server.IIS": "1.0.0-beta2"        
     },
     "frameworks": {
         "aspnet50": { },
@@ -27,9 +21,5 @@
         "**.kproj",
         "**.user",
         "**.vspscc"
-    ],
-    "scripts": {
-        "postrestore": [ "npm install" ],
-        "prepare": [ "grunt bower:install" ]
-    }
+    ]
 }
