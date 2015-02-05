@@ -11,7 +11,7 @@ namespace WebApiShimMvc
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env)
+        public Startup()
         {
             // Setup configuration sources.
             Configuration = new Configuration()
@@ -24,6 +24,7 @@ namespace WebApiShimMvc
         // Configure is called after ConfigureServices is called.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
         {
+			loggerfactory.AddConsole();
             app.UseErrorPage(ErrorPageOptions.ShowAll);
 
             app.UseServices(services =>
