@@ -1,29 +1,11 @@
-# README #
+# ASP .NET Samples #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+The repo contains various samples from my ASP .NET 5 talk
 
-### What is this repository for? ###
+### Quick Links ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* You can find instructions to install the asp.net 5 runtime [here](https://github.com/aspnet/Home)
+* [ASP .NET 5 Home](http://www.asp.net/vnext)
+* [ASP.NET vNext Community Standup](https://www.youtube.com/playlist?list=PL0M0zPgJ3HSftTAAHttA3JQU4vOjXFquF)
+* [Omni-Sharp](http://www.omnisharp.net/) - Cross Platform Tooling
+* Channel9 Serieis - [What's new with ASP .NET 5](http://channel9.msdn.com/Series/Whats-New-with-ASPNET-5)
