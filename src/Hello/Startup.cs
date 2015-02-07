@@ -7,7 +7,7 @@ namespace Hello
     {
         public void Configure(IApplicationBuilder app)
         {
-			app.Run(context => context.Response.WriteAsync("Hello!!"));			
+			app.Run(context => context.Response.WriteAsync("Hello mate!!"));			
 		}
     }
 }
