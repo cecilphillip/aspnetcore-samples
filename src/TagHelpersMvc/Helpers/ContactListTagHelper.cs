@@ -1,14 +1,12 @@
 ﻿using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Razor.Runtime.TagHelpers;
-using Microsoft.AspNet.Razor.TagHelpers;
 using System.Linq;
 using System.Collections.Generic;
 using TagHelpersMvc.Models;
 
 namespace TagHelpersMvc.Helpers
-{    
-    [ContentBehavior(ContentBehavior.Replace)]
-    [TagName("contactlist")]
+{
+	[HtmlElementName("contactlist")]
     public class ContactListTagHelper : TagHelper
     {
         [Activate]

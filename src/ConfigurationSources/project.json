@@ -1,15 +1,15 @@
-﻿{
+{
     "webroot": "wwwroot",
     "version": "1.0.0-*",
     "exclude": [
         "wwwroot"
     ],
     "dependencies": {
-		"Microsoft.AspNet.Server.IIS": "1.0.0-beta2",
-		"Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta2"
+        "Microsoft.AspNet.Server.IIS": "1.0.0-beta3",
+        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3"
     },
-    "frameworks" : {
-        "aspnet50" : { },
-        "aspnetcore50" : { }
+    "frameworks": {
+        "aspnet50": { },
+        "aspnetcore50": { }
     }
 }

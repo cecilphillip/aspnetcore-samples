@@ -6,6 +6,7 @@ using Microsoft.AspNet.Routing;
 using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.AspNet.Mvc;
+using Microsoft.Framework.Logging;
 
 namespace HelloMvc
 {
@@ -13,6 +14,7 @@ namespace HelloMvc
     {
         public Startup(IHostingEnvironment env)
         {
+			env.WebRootFileProvider.Watc
             // Setup configuration sources.
             Configuration = new Configuration()
                 .AddJsonFile("config.json")
@@ -25,7 +27,8 @@ namespace HelloMvc
         public void ConfigureServices(IServiceCollection services)
         {
             // Add MVC services to the services container.
-            services.AddMvc();            
+            services.AddMvc();    
+			       
         }
 
         // Configure is called after ConfigureServices is called.
