@@ -13,8 +13,7 @@ namespace HelloMvc
     public class Startup
     {
         public Startup(IHostingEnvironment env)
-        {
-			env.WebRootFileProvider.Watc
+        {			
             // Setup configuration sources.
             Configuration = new Configuration()
                 .AddJsonFile("config.json")
