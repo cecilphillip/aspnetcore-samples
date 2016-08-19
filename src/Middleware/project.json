@@ -15,12 +15,7 @@
         }
       }
     },
-    "net461": {
-      "dependencies": {
-        "Microsoft.Owin": "3.0.1",
-        "Owin": "1.0.0"
-      }
-    } 
+    "net461": {} 
   },
   "tools": {
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final"

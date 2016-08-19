@@ -1,12 +1,7 @@
-﻿using System;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Diagnostics;
-using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Routing;
-using Microsoft.Framework.ConfigurationModel;
-using Microsoft.Framework.DependencyInjection;
-using Microsoft.AspNet.Mvc;
-using Microsoft.Framework.Logging;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace HelloMvc
 {
@@ -15,9 +10,11 @@ namespace HelloMvc
         public Startup(IHostingEnvironment env)
         {			
             // Setup configuration sources.
-            Configuration = new Configuration()
+            Configuration = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("config.json")
-                .AddEnvironmentVariables();
+                .AddEnvironmentVariables()
+                .Build();
         }
 
         public IConfiguration Configuration { get; set; }
@@ -33,7 +30,7 @@ namespace HelloMvc
         // Configure is called after ConfigureServices is called.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseErrorPage(ErrorPageOptions.ShowAll);                        
+            app.UseDeveloperExceptionPage();
 
             // Add static files to the request pipeline.
             app.UseStaticFiles();
