@@ -1,11 +1,10 @@
-# ASP .NET Samples #
+# ASP .NET Core Samples #
 
-The repo contains various samples from my ASP .NET 5 talk
+The repo contains various samples on using ASP.NET Core
 
 ### Quick Links ###
 
-* You can find instructions to install the asp.net 5 runtime [here](https://github.com/aspnet/Home)
-* [ASP .NET 5 Home](http://www.asp.net/vnext)
-* [ASP.NET vNext Community Standup](https://www.youtube.com/playlist?list=PL0M0zPgJ3HSftTAAHttA3JQU4vOjXFquF)
+* [.NET Core Installation](https://www.microsoft.com/net/core/platform)
+* [ASP.NET Core Docs](https://docs.asp.net/en/latest/)
+* [ASP.NET Community Standup](https://live.asp.net)
 * [Omni-Sharp](http://www.omnisharp.net/) - Cross Platform Tooling
-* Channel9 Serieis - [What's new with ASP .NET 5](http://channel9.msdn.com/Series/Whats-New-with-ASPNET-5)
