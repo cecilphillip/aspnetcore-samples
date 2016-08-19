@@ -1,6 +1,6 @@
 # ASP .NET Core Samples #
 
-The repo contains various samples on using ASP.NET Core
+The repo contains various samples on using ASP.NET Core. History covers beta 2 to v1.0 RTM
 
 ### Quick Links ###
 
