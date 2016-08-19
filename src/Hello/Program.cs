@@ -1,14 +1,26 @@
-﻿using System;
+﻿using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
-namespace CustomCommands
+namespace Hello
 {
     public class Program
     {
-        public int Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Custom Command Actions");
-            Console.WriteLine("Do whatever you like ... ");
-            return 0;
+            var config = new ConfigurationBuilder()
+                .AddCommandLine(args)
+                .Build();
+
+            var host = new WebHostBuilder()
+                .UseConfiguration(config)
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup<Startup>()
+                .Build();
+
+            host.Run();
         }
     }
 }
