@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNet.Mvc;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Net;
 using System.Web.Http;
 using WebApiShimMvc.Models;
 using System.Linq;
 using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApiShimMvc.Controllers
 {

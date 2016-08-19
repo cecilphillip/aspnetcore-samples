@@ -1,45 +1,32 @@
-﻿using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Diagnostics;
-using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Routing;
-using Microsoft.Framework.ConfigurationModel;
-using Microsoft.Framework.DependencyInjection;
-using Microsoft.Framework.Logging;
-using Microsoft.Framework.Logging.Console;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace WebApiShimMvc
 {
     public class Startup
     {
-        public Startup()
+        public void ConfigureServices(IServiceCollection services)
         {
-            // Setup configuration sources.
-            Configuration = new Configuration()
-                .AddJsonFile("config.json")
-                .AddEnvironmentVariables();
+            services.AddMvc().AddJsonOptions(options =>
+            {
+                options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            })
+            .AddWebApiConventions();
         }
-
-        public IConfiguration Configuration { get; set; }        
-
-        // Configure is called after ConfigureServices is called.
+        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
         {
-			loggerfactory.AddConsole();
-            app.UseErrorPage(ErrorPageOptions.ShowAll);
+            loggerfactory.AddConsole();
 
-            app.UseServices(services =>
-            {
-                services.AddMvc();
-                services.AddWebApiConventions();
-            });
+            app.UseDeveloperExceptionPage();
 
             app.UseMvc(routes =>
             {
-                //routes.MapRoute(
-                //    name: "default",
-                //    template: "{controller}/{action}",
-                //    defaults: new { controller = "Home", action = "Index" });
-
                 routes.MapWebApiRoute("DefaultApi", "api/{controller}/{action}");
             });
         }

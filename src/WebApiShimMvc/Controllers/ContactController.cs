@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Web.Http;
 using System.Linq;
-using Microsoft.AspNet.Mvc;
-using System.Threading.Tasks;
 using WebApiShimMvc.Models;
 using System.Net;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApiShimMvc.Controllers.Controllers
 {
