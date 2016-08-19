@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MobelBindingMvc.Models
+﻿namespace MobelBindingMvc.Models
 {   
     public class Friend
     {      

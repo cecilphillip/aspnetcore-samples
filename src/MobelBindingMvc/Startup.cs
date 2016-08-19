@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Diagnostics;
-using Microsoft.AspNet.Routing;
-using Microsoft.Framework.DependencyInjection;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MobelBindingMvc
 {
@@ -14,7 +12,7 @@ namespace MobelBindingMvc
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseErrorPage(ErrorPageOptions.ShowAll);
+            app.UseDeveloperExceptionPage();
             
             app.UseMvc(routes =>
             {
