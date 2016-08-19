@@ -24,7 +24,7 @@ namespace Middleware
             {
                 var value = headers[PingMe].FirstOrDefault();
                 var responseHeaders = (IDictionary<string, string[]>)env["owin.ResponseHeaders"];
-                responseHeaders[PingBack] = new[] { string.Format("HI {0}", value) };
+                responseHeaders[PingBack] = new[] {$"HI {value}"};
                 env["owin.ResponseStatusCode"] = 202;
 
                 return;
