@@ -1,15 +1,17 @@
-﻿using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Razor.Runtime.TagHelpers;
-using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 using TagHelpersMvc.Models;
+using System.Linq;
+using System.Text;
 
 namespace TagHelpersMvc.Helpers
 {
-	[HtmlElementName("contactlist")]
+    [HtmlTargetElement("contactlist")]
     public class ContactListTagHelper : TagHelper
     {
-        [Activate]
+        [ViewContext]
         protected internal ViewContext ViewContext { get; set; }
 
         [HtmlAttributeName("model")]
@@ -45,16 +47,19 @@ namespace TagHelpersMvc.Helpers
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "div";
-            output.SelfClosing = false;
+            output.TagMode = TagMode.StartTagAndEndTag;
 
             if (For == null || !For.Any()) return;
-            output.Content = template_header;
+
+            var sb = new StringBuilder(template_header);
             For.ToList().ForEach(c =>
             {
-                output.Content += GenerateContainer(c);
+               sb.Append(GenerateContainer(c));
             });
 
-            output.Content += template_footer;
+             sb.Append( template_footer);
+
+            output.Content.SetHtmlContent(sb.ToString());
         }
 
         private string GenerateContainer(Contact model)
